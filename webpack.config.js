@@ -5,12 +5,12 @@ export default {
   entry: "./src/index.js", // Entry point for the application
   output: {
     filename: "main.js", // Output file name
-    path: path.resolve("dist"), // Output directory
+    path: path.resolve("docs"), // Output directory changed to "docs"
     clean: true, // Clean the output directory before building
   },
   devtool: "inline-source-map", // Source maps for easier debugging
   devServer: {
-    static: "./dist", // Serve files from the "dist" directory
+    static: "./docs", // Serve files from the "docs" directory
     open: true, // Automatically open the browser
     hot: true, // Enable hot module replacement
   },
