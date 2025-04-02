@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: #16213e;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Main Layout */
+.boards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 20px;
+}
+
+.board-section h2 {
+  margin-bottom: 10px;
+}
+
+/* Game Boards */
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 2px;
+  background-color: #0f3460;
+  padding: 5px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #576574;
+  position: relative;
+  cursor: pointer;
+  /* Remove any transitions or animations */
+  transition: none;
+}
+
+/* Make ship cells visible */
+.cell.ship {
+  background-color: #3a3a3a; /* Gray for ships */
+  border: 1px solid #ffffff;
+}
+
+/* Make hit cells visible */
+.cell.hit {
+  background-color: red; /* Red color for hits on ships */
+  border: 2px solid #ff0000;
+}
+
+/* Make miss cells visible */
+.cell.miss {
+  background-color: blue; /* Blue color for misses */
+  border: 2px solid #0000ff;
+}
+
+.cell.ship.hit {
+  background-color: orange; /* Highlight hit ship cells */
+}
+
+.cell.hidden {
+  background-color: #c0c0c0;
+}
+
+/* Controls */
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #e84118;
+}
+
+/* Disable buttons when they are disabled */
+button:disabled {
+  background-color: #888888;
+  cursor: not-allowed;
+}
+
+button#restart-game {
+  background-color: #4caf50; /* Green color for restart button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button#restart-game:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .boards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .board {
+    grid-template-columns: repeat(10, 25px);
+    grid-template-rows: repeat(10, 25px);
+  }
+}
